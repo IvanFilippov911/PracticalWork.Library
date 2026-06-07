@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Напоминание о возврате книги</title>
+</head>
+<body style="margin:0;padding:24px;font-family:Arial,sans-serif;background:#f8f9fa;color:#333333;">
+  <p style="font-family:Arial,sans-serif;font-size:16px;color:#333333;margin:0 0 16px 0;">
+    Уважаемый(ая) {{ReaderFullName}}!
+  </p>
+
+  <p style="margin:0 0 20px 0;">
+    Напоминаем вам о необходимости возврата книги в библиотеку.
+  </p>
+
+  <div style="border:1px solid #dee2e6;background:#ffffff;padding:20px;margin:0 0 20px 0;">
+    <div style="font-family:Arial,sans-serif;font-size:18px;color:#2c3e50;font-weight:bold;margin:0 0 12px 0;">
+      ИНФОРМАЦИЯ О КНИГЕ
+    </div>
+
+    <div style="margin:0 0 8px 0;"><span style="font-weight:bold;color:#495057;">Название:</span> <span style="color:#6c757d;">{{BookTitle}}</span></div>
+    <div style="margin:0 0 8px 0;"><span style="font-weight:bold;color:#495057;">Автор(ы):</span> <span style="color:#6c757d;">{{BookAuthors}}</span></div>
+    <div style="margin:0 0 8px 0;"><span style="font-weight:bold;color:#495057;">Срок возврата:</span> <span style="color:#28a745;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">{{DueDate}}</span></div>
+    <div style="margin:0;"><span style="font-weight:bold;color:#495057;">Осталось дней:</span> <span style="color:#6c757d;">{{DaysLeft}}</span></div>
+  </div>
+
+  <p style="margin:0 0 18px 0;">Пожалуйста, верните книгу до указанной даты.</p>
+
+  <div style="margin:0 0 20px 0;">
+    <div style="font-weight:bold;margin-bottom:8px;">КОНТАКТЫ БИБЛИОТЕКИ:</div>
+    <ul style="margin:0;padding-left:20px;color:#495057;font-family:Arial,sans-serif;font-size:14px;">
+      <li style="margin-bottom:6px;"><span style="color:#007bff;">•</span> Адрес: {{LibraryAddress}}</li>
+      <li style="margin-bottom:6px;"><span style="color:#007bff;">•</span> Телефон: {{LibraryPhone}}</li>
+      <li><span style="color:#007bff;">•</span> Часы работы: {{LibraryHours}}</li>
+    </ul>
+  </div>
+
+  <p style="font-family:Arial,sans-serif;font-size:14px;color:#6c757d;font-style:italic;margin:0 0 18px 0;">
+    С уважением,<br/>Администрация библиотеки
+  </p>
+
+  <div style="font-family:Arial,sans-serif;font-size:12px;color:#adb5bd;text-align:center;">
+    Это письмо было отправлено автоматически.<br/>
+    Если вы уже вернули книгу, проигнорируйте это сообщение.
+  </div>
+</body>
+</html>

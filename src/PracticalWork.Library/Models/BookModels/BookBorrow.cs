@@ -1,0 +1,52 @@
+using PracticalWork.Library.Enums;
+
+namespace PracticalWork.Library.Models.BookModels;
+
+/// <summary>
+/// Модель, представляющая выдачу книги читателю
+/// </summary>
+public class BookBorrow
+{
+    /// <summary>Дата выдачи книги</summary>
+    public DateOnly BorrowDate { get; set; }
+
+    /// <summary>Срок возврата книги</summary>
+    public DateOnly DueDate { get; set; }
+
+    /// <summary>Фактическая дата возврата книги</summary>
+    public DateOnly ReturnDate { get; set; }
+
+    /// <summary>Статус книги в библиотеке</summary>
+    public BookIssueStatus Status { get; set; }
+    /// <summary>
+    /// Книга
+    /// </summary>
+
+    public Book Book { get; set; }
+    
+    /// <summary>
+    /// Создает новый объект выдачи книги
+    /// </summary>
+    /// <returns>Объект выдачи книги</returns>
+    public static BookBorrow CreateBookBorrow(TimeProvider timeProvider)
+    {
+        var bookBorrow = new BookBorrow
+        {
+            BorrowDate = DateOnly.FromDateTime(timeProvider.GetUtcNow().UtcDateTime),
+            Status = BookIssueStatus.Issued
+        };
+        bookBorrow.DueDate = bookBorrow.BorrowDate.AddDays(30);
+        return bookBorrow;
+    }
+    
+    /// <summary>
+    /// Возвращает книгу в библиотеку
+    /// </summary>
+    public void ReturnBookBorrow(TimeProvider timeProvider)
+    {
+        var currentDate = DateOnly.FromDateTime(timeProvider.GetUtcNow().UtcDateTime);
+        Status = currentDate <= DueDate ? BookIssueStatus.Returned : BookIssueStatus.Overdue;
+        ReturnDate = currentDate;
+        Book.Status = BookStatus.Available;
+    }
+}

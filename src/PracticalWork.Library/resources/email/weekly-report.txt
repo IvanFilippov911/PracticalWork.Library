@@ -1,0 +1,12 @@
+Еженедельный отчет библиотеки
+Период: {{PeriodFrom}} - {{PeriodTo}}
+
+Краткая статистика:
+- Новых книг: {{NewBooksCount}}
+- Новых читателей: {{NewReadersCount}}
+- Выдано книг: {{BorrowedCount}}
+- Возвращено книг: {{ReturnedCount}}
+- Просроченных выдач на конец недели: {{OverdueCount}}
+
+Ссылка на CSV отчет:
+{{ReportUrl}}

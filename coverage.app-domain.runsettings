@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <Format>cobertura</Format>
+          <Include>[PracticalWork.Library]*,[PracticalWork.Library.Contracts]*,[PracticalWork.Reports.Web]*,[PracticalWork.Reports.Worker]*</Include>
+          <Exclude>[*.Tests]*,[xunit*]*,[Moq*]*,[coverlet.*]*</Exclude>
+          <ExcludeByFile>**/Migrations/*.cs,**/obj/**,**/bin/**,**/Entry.cs,**/Program.cs,**/Startup.cs,**/MvcSetupExtensions.cs,**/Controllers/*.cs,**/Configuration/*.cs,**/Validations/*.cs,**/Services/Email/*.cs,**/Jobs/**/*.cs,**/ReportConsumerWorker.cs,**/Options/*.cs</ExcludeByFile>
+          <IncludeTestAssembly>false</IncludeTestAssembly>
+          <SingleHit>false</SingleHit>
+          <UseSourceLink>false</UseSourceLink>
+          <SkipAutoProps>true</SkipAutoProps>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

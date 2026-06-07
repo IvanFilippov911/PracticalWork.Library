@@ -1,0 +1,303 @@
+{
+  "info": {
+    "name": "PracticalWork.Library",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "libraryUrl", "value": "http://localhost:8081" },
+    { "key": "reportsUrl", "value": "http://localhost:8082" },
+    { "key": "bookId", "value": "" },
+    { "key": "readerId", "value": "" },
+    { "key": "reportName", "value": "" },
+    { "key": "jobName", "value": "ReturnReminderJob" }
+  ],
+  "item": [
+    {
+      "name": "Library API",
+      "item": [
+        {
+          "name": "Create Reader",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Иван Петров\",\n  \"phoneNumber\": \"+79990001122\",\n  \"email\": \"ivan.petrov@example.com\",\n  \"expiryDate\": \"2026-12-31\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{libraryUrl}}/api/v1/readers"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "  try {",
+                  "    const data = pm.response.json();",
+                  "    if (data && data.Id) {",
+                  "      pm.collectionVariables.set('readerId', data.Id);",
+                  "    }",
+                  "  } catch (e) {}",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Extend Reader",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"2027-12-31\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{libraryUrl}}/{{readerId}}/extend"
+          }
+        },
+        {
+          "name": "Close Reader",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/{{readerId}}/close"
+          }
+        },
+        {
+          "name": "Reader Borrowed Books",
+          "request": {
+            "method": "GET",
+            "url": "{{libraryUrl}}/{{readerId}}/books"
+          }
+        },
+        {
+          "name": "Create Book",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Clean Code\",\n  \"category\": \"ScientificBook\",\n  \"authors\": [\"Robert C. Martin\"],\n  \"description\": \"Про чистый код\",\n  \"year\": 2008\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{libraryUrl}}/api/v1/books"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "  let id = null;",
+                  "  try { id = pm.response.json(); } catch (e) { id = pm.response.text(); }",
+                  "  if (id) {",
+                  "    const str = String(id).replace(/\"/g, '');",
+                  "    pm.collectionVariables.set('bookId', str);",
+                  "  }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Book",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Clean Code (2nd)\",\n  \"authors\": [\"Robert C. Martin\"],\n  \"description\": \"Обновленное описание\",\n  \"year\": 2008\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{libraryUrl}}/api/v1/books/{{bookId}}"
+          }
+        },
+        {
+          "name": "Add Book Details (Cover)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "Description", "value": "Описание книги", "type": "text" },
+                { "key": "coverFile", "type": "file", "src": "/absolute/path/to/cover.jpg" }
+              ]
+            },
+            "url": "{{libraryUrl}}/api/v1/books/{{bookId}}/details"
+          }
+        },
+        {
+          "name": "Archive Book",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/api/v1/books/{{bookId}}/archive"
+          }
+        },
+        {
+          "name": "Get Books (Filtered)",
+          "request": {
+            "method": "GET",
+            "url": "{{libraryUrl}}/api/v1/books?pageNumber=1&pageSize=10&category=ScientificBook"
+          }
+        },
+        {
+          "name": "Borrow Book",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/borrow/{{bookId}}/{{readerId}}"
+          }
+        },
+        {
+          "name": "Return Book",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/return/{{bookId}}/{{readerId}}"
+          }
+        },
+        {
+          "name": "Get Book Details",
+          "request": {
+            "method": "GET",
+            "url": "{{libraryUrl}}/books/{{bookId}}/details"
+          }
+        },
+        {
+          "name": "Get Non-Archived Books Page",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageNumber\": 1,\n  \"pageSize\": 10\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{libraryUrl}}/books"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Jobs API",
+      "item": [
+        {
+          "name": "Get Jobs",
+          "request": {
+            "method": "GET",
+            "url": "{{libraryUrl}}/api/v1/jobs"
+          }
+        },
+        {
+          "name": "Trigger Return Reminder Job",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/api/v1/jobs/ReturnReminderJob/trigger"
+          }
+        },
+        {
+          "name": "Trigger Weekly Admin Report Job",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/api/v1/jobs/WeeklyAdminReportJob/trigger"
+          }
+        },
+        {
+          "name": "Trigger Archive Old Books Job",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/api/v1/jobs/ArchiveOldBooksJob/trigger"
+          }
+        },
+        {
+          "name": "Trigger Job (Variable)",
+          "request": {
+            "method": "POST",
+            "url": "{{libraryUrl}}/api/v1/jobs/{{jobName}}/trigger"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reports API",
+      "item": [
+        {
+          "name": "Get Activity Logs",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pageNumber\": 1,\n  \"pageSize\": 20,\n  \"eventDateFrom\": \"2026-01-01\",\n  \"eventDateTo\": \"2026-12-31\",\n  \"eventTypes\": [\n    \"book.created\",\n    \"book.borrowed\",\n    \"book.returned\",\n    \"book.archived\",\n    \"reader.created\",\n    \"reader.closed\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{reportsUrl}}/api/v1/reports/activity"
+          }
+        },
+        {
+          "name": "Generate Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"periodFrom\": \"2026-01-01\",\n  \"periodTo\": \"2026-12-31\",\n  \"eventTypes\": [\n    \"book.created\",\n    \"book.borrowed\",\n    \"book.returned\",\n    \"book.archived\",\n    \"reader.created\",\n    \"reader.closed\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{reportsUrl}}/api/v1/reports/generate"
+          }
+        },
+        {
+          "name": "Get Generated Reports",
+          "request": {
+            "method": "GET",
+            "url": "{{reportsUrl}}/api/v1/reports"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "  try {",
+                  "    const list = pm.response.json();",
+                  "    if (Array.isArray(list) && list.length > 0 && list[0].ReportName) {",
+                  "      pm.collectionVariables.set('reportName', list[0].ReportName);",
+                  "    }",
+                  "  } catch (e) {}",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Download Report (Presigned URL)",
+          "request": {
+            "method": "GET",
+            "url": "{{reportsUrl}}/api/v1/reports/{{reportName}}/download"
+          }
+        }
+      ]
+    }
+  ]
+}

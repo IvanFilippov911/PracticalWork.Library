@@ -1,0 +1,328 @@
+version: '3.8'
+
+services:
+  library-web:
+    build:
+      context: .
+      dockerfile: src/PracticalWork.Library.Web/Dockerfile
+    container_name: library-web
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ASPNETCORE_ENVIRONMENT: Development
+      App__ConnectionStrings__AppDbContext: Host=postgres-library;Port=5432;Database=library;Username=postgres;Password=postgres
+      App__ConnectionStrings__ReportsDbContext: Host=postgres-reports;Port=5432;Database=reports;Username=postgres;Password=postgres
+      App__Redis__RedisCacheConnection: redis:6379
+      App__Redis__RedisCachePrefix: Library
+      App__Minio__Endpoint: host.docker.internal:9003
+      App__Minio__PublicEndpoint: http://localhost:9003
+      App__Minio__AccessKey: AKIAIOSFODNN7EXAMPLE
+      App__Minio__SecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      App__Minio__CoversBucketName: book-covers
+      App__Minio__ReportsBucketName: reports
+      App__Minio__ExpInSec: 1800
+      App__RabbitMQ__Host: rabbitmq
+      App__RabbitMQ__User: guest
+      App__RabbitMQ__Password: guest
+      App__RabbitMQ__Port: 5672
+      App__RabbitMQ__AppName: library
+      App__RabbitMQ__Library__ExchangeName: library.exchange
+      App__RabbitMQ__Library__BookCreate__QueueName: book.create.queue
+      App__RabbitMQ__Library__BookCreate__RoutingKey: book.create.key
+      App__RabbitMQ__Library__BookArchive__QueueName: book.archive.queue
+      App__RabbitMQ__Library__BookArchive__RoutingKey: book.archive.key
+      App__RabbitMQ__Library__BookBorrow__QueueName: book.borrow.queue
+      App__RabbitMQ__Library__BookBorrow__RoutingKey: book.borrow.key
+      App__RabbitMQ__Library__BookReturn__QueueName: book.return.queue
+      App__RabbitMQ__Library__BookReturn__RoutingKey: book.return.key
+      App__RabbitMQ__Library__ReaderCreate__QueueName: reader.create.queue
+      App__RabbitMQ__Library__ReaderCreate__RoutingKey: reader.create.key
+      App__RabbitMQ__Library__ReaderClose__QueueName: reader.close.queue
+      App__RabbitMQ__Library__ReaderClose__RoutingKey: reader.close.key
+      App__RabbitMQ__Reports__QueueName: reports.queue
+      App__RabbitMQ__Reports__Exchange: reports.exchange
+      App__RabbitMQ__Reports__RoutingKey: reports.create.key
+      App__Email__SmtpServer: smtp4dev
+      App__Email__SmtpPort: 25
+      App__Email__UseSsl: false
+      App__Email__SenderName: Библиотека
+      App__Email__SenderEmail: noreply@library.local
+      App__Email__AdminEmails__0: admin1@library.local
+      App__Email__AdminEmails__1: admin2@library.local
+    ports:
+      - "8081:8080"
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
+      postgres-library:
+        condition: service_healthy
+      postgres-reports:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+      smtp4dev:
+        condition: service_started
+    networks:
+      - library-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  reports-web:
+    build:
+      context: .
+      dockerfile: src/PracticalWork.Reports.Web/Dockerfile
+    container_name: reports-web
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ASPNETCORE_ENVIRONMENT: Development
+      App__ConnectionStrings__ReportsDbContext: Host=postgres-reports;Port=5432;Database=reports;Username=postgres;Password=postgres
+      App__Redis__RedisCacheConnection: redis:6379
+      App__Redis__RedisCachePrefix: Library
+      App__Minio__Endpoint: host.docker.internal:9003
+      App__Minio__PublicEndpoint: http://localhost:9003
+      App__Minio__AccessKey: AKIAIOSFODNN7EXAMPLE
+      App__Minio__SecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      App__Minio__ReportsBucketName: reports
+      App__Minio__ExpInSec: 1800
+      App__RabbitMQ__Host: rabbitmq
+      App__RabbitMQ__User: guest
+      App__RabbitMQ__Password: guest
+      App__RabbitMQ__Port: 5672
+      App__RabbitMQ__AppName: library
+      App__RabbitMQ__Library__ExchangeName: library.exchange
+      App__RabbitMQ__Library__BookCreate__QueueName: book.create.queue
+      App__RabbitMQ__Library__BookCreate__RoutingKey: book.create.key
+      App__RabbitMQ__Library__BookArchive__QueueName: book.archive.queue
+      App__RabbitMQ__Library__BookArchive__RoutingKey: book.archive.key
+      App__RabbitMQ__Library__BookBorrow__QueueName: book.borrow.queue
+      App__RabbitMQ__Library__BookBorrow__RoutingKey: book.borrow.key
+      App__RabbitMQ__Library__BookReturn__QueueName: book.return.queue
+      App__RabbitMQ__Library__BookReturn__RoutingKey: book.return.key
+      App__RabbitMQ__Library__ReaderCreate__QueueName: reader.create.queue
+      App__RabbitMQ__Library__ReaderCreate__RoutingKey: reader.create.key
+      App__RabbitMQ__Library__ReaderClose__QueueName: reader.close.queue
+      App__RabbitMQ__Library__ReaderClose__RoutingKey: reader.close.key
+      App__RabbitMQ__Reports__QueueName: reports.queue
+      App__RabbitMQ__Reports__Exchange: reports.exchange
+      App__RabbitMQ__Reports__RoutingKey: reports.create.key
+    ports:
+      - "8082:8080"
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
+      postgres-reports:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    networks:
+      - library-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  reports-worker:
+    build:
+      context: .
+      dockerfile: src/PracticalWork.Reports.Worker/Dockerfile
+    container_name: reports-worker
+    environment:
+      DOTNET_ENVIRONMENT: Development
+      App__ConnectionStrings__ReportsDbContext: Host=postgres-reports;Port=5432;Database=reports;Username=postgres;Password=postgres
+      App__Redis__RedisCacheConnection: redis:6379
+      App__Redis__RedisCachePrefix: Library
+      App__Minio__Endpoint: host.docker.internal:9003
+      App__Minio__PublicEndpoint: http://localhost:9003
+      App__Minio__AccessKey: AKIAIOSFODNN7EXAMPLE
+      App__Minio__SecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      App__Minio__ReportsBucketName: reports
+      App__Minio__ExpInSec: 1800
+      App__BooksCache__ReportsCacheOptions__Prefix: reports:list
+      App__BooksCache__ReportsCacheOptions__TtlMinutes: 1440
+      App__RabbitMQ__Host: rabbitmq
+      App__RabbitMQ__User: guest
+      App__RabbitMQ__Password: guest
+      App__RabbitMQ__Port: 5672
+      App__RabbitMQ__AppName: library
+      App__RabbitMQ__Library__ExchangeName: library.exchange
+      App__RabbitMQ__Library__BookCreate__QueueName: book.create.queue
+      App__RabbitMQ__Library__BookCreate__RoutingKey: book.create.key
+      App__RabbitMQ__Library__BookArchive__QueueName: book.archive.queue
+      App__RabbitMQ__Library__BookArchive__RoutingKey: book.archive.key
+      App__RabbitMQ__Library__BookBorrow__QueueName: book.borrow.queue
+      App__RabbitMQ__Library__BookBorrow__RoutingKey: book.borrow.key
+      App__RabbitMQ__Library__BookReturn__QueueName: book.return.queue
+      App__RabbitMQ__Library__BookReturn__RoutingKey: book.return.key
+      App__RabbitMQ__Library__ReaderCreate__QueueName: reader.create.queue
+      App__RabbitMQ__Library__ReaderCreate__RoutingKey: reader.create.key
+      App__RabbitMQ__Library__ReaderClose__QueueName: reader.close.queue
+      App__RabbitMQ__Library__ReaderClose__RoutingKey: reader.close.key
+      App__RabbitMQ__Reports__QueueName: reports.queue
+      App__RabbitMQ__Reports__Exchange: reports.exchange
+      App__RabbitMQ__Reports__RoutingKey: reports.create.key
+    depends_on:
+      migrator:
+        condition: service_completed_successfully
+      postgres-reports:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    networks:
+      - library-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  migrator:
+    build:
+      context: .
+      dockerfile: utils/PracticalWork.Library.Data.PostgreSql.Migrator/Dockerfile
+    container_name: library-migrator
+    restart: "no"
+    environment:
+      App__AppDbContext: Host=postgres-library;Port=5432;Database=library;Username=postgres;Password=postgres
+      App__ReportsDbContext: Host=postgres-reports;Port=5432;Database=reports;Username=postgres;Password=postgres
+      App__MigrationTimeoutInSeconds: 360
+    depends_on:
+      postgres-library:
+        condition: service_healthy
+      postgres-reports:
+        condition: service_healthy
+    networks:
+      - library-net
+
+  library-stack:
+    image: alpine:3.20
+    container_name: library-stack
+    command: ["/bin/sh", "-c", "exit 0"]
+    depends_on:
+      - postgres-library
+      - postgres-reports
+      - redis
+      - minio
+      - rabbitmq
+      - smtp4dev
+      - migrator
+      - library-web
+      - reports-web
+      - reports-worker
+    networks:
+      - library-net
+
+  postgres-library:
+    image: postgres:latest
+    container_name: library-postgres
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5438:5432"
+    volumes:
+      - postgres_library_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - library-net
+
+  postgres-reports:
+    image: postgres:latest
+    container_name: reports-postgres
+    environment:
+      POSTGRES_DB: reports
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5439:5432"
+    volumes:
+      - postgres_reports_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - library-net
+
+  redis:
+    image: redis:latest
+    container_name: library-redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - library-net
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: library-redisinsight
+    ports:
+      - "5540:5540"
+    volumes:
+      - redisinsight_data:/data
+    networks:
+      - library-net
+
+  minio:
+    image: minio/minio
+    container_name: library-minio
+    ports:
+      - "9003:9000"
+      - "9004:9001"
+    environment:
+      MINIO_ROOT_USER: AKIAIOSFODNN7EXAMPLE
+      MINIO_ROOT_PASSWORD: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    volumes:
+      - minio_data:/data
+    command: server /data --console-address ":9001"
+    networks:
+      - library-net
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: library-rabbitmq
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - library-net
+
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    container_name: library-smtp4dev
+    ports:
+      - "2525:25"
+      - "5005:80"
+    networks:
+      - library-net
+
+volumes:
+  postgres_library_data:
+  postgres_reports_data:
+  redis_data:
+  redisinsight_data:
+  minio_data:
+  rabbitmq_data:
+
+networks:
+  library-net:
+    driver: bridge

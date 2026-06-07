@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.8210999999999999" branch-rate="0.5178" version="1.9" timestamp="1779801955" lines-covered="225" lines-valid="274" branches-covered="29" branches-valid="56">
+  <sources>
+    <source>/Users/tagirahmetsin/3 курс/ак барс/PracticalWork.Library/src/</source>
+  </sources>
+  <packages>
+    <package name="PracticalWork.Reports.Worker" line-rate="1" branch-rate="1" complexity="7">
+      <classes>
+        <class name="PracticalWork.Reports.Worker.Services.ReportGenerateService" filename="PracticalWork.Reports.Worker/Services/ReportGenerateService.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="GenerateReport" signature="(System.Guid,System.Collections.Generic.IReadOnlyList`1&lt;PracticalWork.Library.Contracts.Models.ReportModels.ActivityLog&gt;)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="19" hits="2" branch="False" />
+                <line number="20" hits="2" branch="False" />
+                <line number="21" hits="2" branch="False" />
+                <line number="24" hits="2" branch="False" />
+                <line number="25" hits="2" branch="False" />
+                <line number="27" hits="12" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="267" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="28" hits="3" branch="False" />
+                <line number="29" hits="3" branch="False" />
+                <line number="30" hits="3" branch="False" />
+                <line number="32" hits="2" branch="False" />
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="False" />
+                <line number="36" hits="2" branch="False" />
+                <line number="37" hits="2" branch="False" />
+                <line number="38" hits="2" branch="False" />
+                <line number="39" hits="2" branch="False" />
+                <line number="40" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.TimeProvider)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="2" branch="False" />
+                <line number="15" hits="2" branch="False" />
+                <line number="16" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="2" branch="False" />
+            <line number="20" hits="2" branch="False" />
+            <line number="21" hits="2" branch="False" />
+            <line number="24" hits="2" branch="False" />
+            <line number="25" hits="2" branch="False" />
+            <line number="27" hits="12" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="267" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="28" hits="3" branch="False" />
+            <line number="29" hits="3" branch="False" />
+            <line number="30" hits="3" branch="False" />
+            <line number="32" hits="2" branch="False" />
+            <line number="34" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="36" hits="2" branch="False" />
+            <line number="37" hits="2" branch="False" />
+            <line number="38" hits="2" branch="False" />
+            <line number="39" hits="2" branch="False" />
+            <line number="40" hits="2" branch="False" />
+            <line number="14" hits="2" branch="False" />
+            <line number="15" hits="2" branch="False" />
+            <line number="16" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Worker.Services.ReportGenerationService" filename="PracticalWork.Reports.Worker/Services/ReportGenerationService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(PracticalWork.Library.Contracts.Abstractions.Storage.IActivityLogRepository,PracticalWork.Library.Contracts.Abstractions.Storage.IReportRepository,PracticalWork.Library.Contracts.Abstractions.Services.IMinioService,PracticalWork.Reports.Worker.Abstractions.IReportGenerateService,PracticalWork.Library.Contracts.Abstractions.Services.ICacheVersionService,Microsoft.Extensions.Options.IOptionsMonitor`1&lt;PracticalWork.Library.Contracts.Options.MinioOptions&gt;,Microsoft.Extensions.Options.IOptionsMonitor`1&lt;PracticalWork.Library.Contracts.Options.BooksCacheOptions&gt;,System.TimeProvider)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="33" hits="2" branch="False" />
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="False" />
+                <line number="36" hits="2" branch="False" />
+                <line number="37" hits="2" branch="False" />
+                <line number="38" hits="2" branch="False" />
+                <line number="39" hits="2" branch="False" />
+                <line number="40" hits="2" branch="False" />
+                <line number="41" hits="2" branch="False" />
+                <line number="42" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="33" hits="2" branch="False" />
+            <line number="34" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="36" hits="2" branch="False" />
+            <line number="37" hits="2" branch="False" />
+            <line number="38" hits="2" branch="False" />
+            <line number="39" hits="2" branch="False" />
+            <line number="40" hits="2" branch="False" />
+            <line number="41" hits="2" branch="False" />
+            <line number="42" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Worker.Services.ReportGenerationService/&lt;GenerateReportAsync&gt;d__9" filename="PracticalWork.Reports.Worker/Services/ReportGenerationService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="50" hits="2" branch="False" />
+                <line number="51" hits="2" branch="False" />
+                <line number="52" hits="2" branch="False" />
+                <line number="55" hits="2" branch="False" />
+                <line number="56" hits="2" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="64" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
+                <line number="66" hits="1" branch="False" />
+                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="72" hits="1" branch="False" />
+                <line number="73" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="76" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="50" hits="2" branch="False" />
+            <line number="51" hits="2" branch="False" />
+            <line number="52" hits="2" branch="False" />
+            <line number="55" hits="2" branch="False" />
+            <line number="56" hits="2" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="67" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="72" hits="1" branch="False" />
+            <line number="73" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="76" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Worker.Handlers.ReportEventHandler" filename="PracticalWork.Reports.Worker/Handlers/ReportEventHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(PracticalWork.Reports.Worker.Abstractions.IReportGenerationService)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Worker.Handlers.ReportEventHandler/&lt;HandleAsync&gt;d__2" filename="PracticalWork.Reports.Worker/Handlers/ReportEventHandler.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="PracticalWork.Reports.Web" line-rate="1" branch-rate="0.75" complexity="11">
+      <classes>
+        <class name="PracticalWork.Reports.Web.Services.ReportService" filename="PracticalWork.Reports.Web/Services/ReportService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(PracticalWork.Library.Contracts.Abstractions.Storage.IActivityLogRepository,PracticalWork.Library.Contracts.Abstractions.Storage.IReportRepository,PracticalWork.Library.Contracts.Abstractions.MessageBroker.IMessageProducer,PracticalWork.Library.Contracts.Abstractions.Services.ICacheService,PracticalWork.Library.Contracts.Abstractions.Services.IMinioService,Microsoft.Extensions.Options.IOptionsMonitor`1&lt;PracticalWork.Library.Contracts.Options.MinioOptions&gt;,PracticalWork.Library.Contracts.Abstractions.Services.ICacheVersionService,Microsoft.Extensions.Options.IOptionsMonitor`1&lt;PracticalWork.Library.Contracts.Options.BooksCacheOptions&gt;,System.TimeProvider)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="37" hits="5" branch="False" />
+                <line number="38" hits="5" branch="False" />
+                <line number="39" hits="5" branch="False" />
+                <line number="40" hits="5" branch="False" />
+                <line number="41" hits="5" branch="False" />
+                <line number="42" hits="5" branch="False" />
+                <line number="43" hits="5" branch="False" />
+                <line number="44" hits="5" branch="False" />
+                <line number="45" hits="5" branch="False" />
+                <line number="46" hits="5" branch="False" />
+                <line number="47" hits="5" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="37" hits="5" branch="False" />
+            <line number="38" hits="5" branch="False" />
+            <line number="39" hits="5" branch="False" />
+            <line number="40" hits="5" branch="False" />
+            <line number="41" hits="5" branch="False" />
+            <line number="42" hits="5" branch="False" />
+            <line number="43" hits="5" branch="False" />
+            <line number="44" hits="5" branch="False" />
+            <line number="45" hits="5" branch="False" />
+            <line number="46" hits="5" branch="False" />
+            <line number="47" hits="5" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Web.Services.ReportService/&lt;&gt;c" filename="PracticalWork.Reports.Web/Services/ReportService.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="&lt;ReadSystemActivityLogs&gt;b__10_0" signature="(PracticalWork.Library.Contracts.Models.ReportModels.ActivityLog)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="56" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;GetListOfReadyReports&gt;b__12_2" signature="(PracticalWork.Library.Contracts.v1.Reports.Response.ReportResponse)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="94" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;GetListOfReadyReports&gt;b__12_0" signature="(PracticalWork.Library.Contracts.Models.ReportModels.Report)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="104" hits="1" branch="False" />
+                <line number="105" hits="1" branch="False" />
+                <line number="106" hits="1" branch="False" />
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="1" branch="False" />
+                <line number="109" hits="1" branch="False" />
+                <line number="110" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;GetListOfReadyReports&gt;b__12_1" signature="(PracticalWork.Library.Contracts.v1.Reports.Response.ReportResponse)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="119" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="56" hits="1" branch="False" />
+            <line number="94" hits="3" branch="False" />
+            <line number="104" hits="1" branch="False" />
+            <line number="105" hits="1" branch="False" />
+            <line number="106" hits="1" branch="False" />
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="1" branch="False" />
+            <line number="109" hits="1" branch="False" />
+            <line number="110" hits="1" branch="False" />
+            <line number="119" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Web.Services.ReportService/&lt;CreateReport&gt;d__11" filename="PracticalWork.Reports.Web/Services/ReportService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="65" hits="1" branch="False" />
+                <line number="66" hits="1" branch="False" />
+                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="73" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="1" branch="False" />
+                <line number="76" hits="1" branch="False" />
+                <line number="78" hits="1" branch="False" />
+                <line number="79" hits="1" branch="False" />
+                <line number="80" hits="1" branch="False" />
+                <line number="81" hits="1" branch="False" />
+                <line number="82" hits="1" branch="False" />
+                <line number="83" hits="1" branch="False" />
+                <line number="84" hits="1" branch="False" />
+                <line number="85" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="65" hits="1" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="67" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="73" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="1" branch="False" />
+            <line number="76" hits="1" branch="False" />
+            <line number="78" hits="1" branch="False" />
+            <line number="79" hits="1" branch="False" />
+            <line number="80" hits="1" branch="False" />
+            <line number="81" hits="1" branch="False" />
+            <line number="82" hits="1" branch="False" />
+            <line number="83" hits="1" branch="False" />
+            <line number="84" hits="1" branch="False" />
+            <line number="85" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Web.Services.ReportService/&lt;GetListOfReadyReports&gt;d__12" filename="PracticalWork.Reports.Web/Services/ReportService.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="88" hits="2" branch="False" />
+                <line number="89" hits="2" branch="False" />
+                <line number="90" hits="2" branch="False" />
+                <line number="91" hits="2" branch="False" />
+                <line number="92" hits="2" branch="False" />
+                <line number="93" hits="2" branch="False" />
+                <line number="96" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="259" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="97" hits="1" branch="False" />
+                <line number="98" hits="1" branch="False" />
+                <line number="101" hits="1" branch="False" />
+                <line number="103" hits="1" branch="False" />
+                <line number="111" hits="1" branch="False" />
+                <line number="113" hits="1" branch="False" />
+                <line number="114" hits="1" branch="False" />
+                <line number="115" hits="1" branch="False" />
+                <line number="116" hits="1" branch="False" />
+                <line number="117" hits="1" branch="False" />
+                <line number="118" hits="1" branch="False" />
+                <line number="121" hits="1" branch="False" />
+                <line number="122" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="88" hits="2" branch="False" />
+            <line number="89" hits="2" branch="False" />
+            <line number="90" hits="2" branch="False" />
+            <line number="91" hits="2" branch="False" />
+            <line number="92" hits="2" branch="False" />
+            <line number="93" hits="2" branch="False" />
+            <line number="96" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="259" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="97" hits="1" branch="False" />
+            <line number="98" hits="1" branch="False" />
+            <line number="101" hits="1" branch="False" />
+            <line number="103" hits="1" branch="False" />
+            <line number="111" hits="1" branch="False" />
+            <line number="113" hits="1" branch="False" />
+            <line number="114" hits="1" branch="False" />
+            <line number="115" hits="1" branch="False" />
+            <line number="116" hits="1" branch="False" />
+            <line number="117" hits="1" branch="False" />
+            <line number="118" hits="1" branch="False" />
+            <line number="121" hits="1" branch="False" />
+            <line number="122" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Web.Services.ReportService/&lt;GetReportUrl&gt;d__13" filename="PracticalWork.Reports.Web/Services/ReportService.cs" line-rate="1" branch-rate="0.5" complexity="2">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="125" hits="1" branch="False" />
+                <line number="126" hits="1" branch="False" />
+                <line number="127" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="257" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="128" hits="1" branch="False" />
+                <line number="129" hits="1" branch="False" />
+                <line number="130" hits="1" branch="False" />
+                <line number="131" hits="1" branch="False" />
+                <line number="132" hits="1" branch="False" />
+                <line number="133" hits="1" branch="False" />
+                <line number="134" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="125" hits="1" branch="False" />
+            <line number="126" hits="1" branch="False" />
+            <line number="127" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="257" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="128" hits="1" branch="False" />
+            <line number="129" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
+            <line number="131" hits="1" branch="False" />
+            <line number="132" hits="1" branch="False" />
+            <line number="133" hits="1" branch="False" />
+            <line number="134" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Reports.Web.Services.ReportService/&lt;ReadSystemActivityLogs&gt;d__10" filename="PracticalWork.Reports.Web/Services/ReportService.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="53" hits="1" branch="False" />
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="57" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="53" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="PracticalWork.Library.Contracts" line-rate="0.623" branch-rate="0.48" complexity="78">
+      <classes>
+        <class name="PracticalWork.Library.Contracts.v1.Reader.Request.CreateReaderRequest" filename="PracticalWork.Library.Contracts/v1/Reader/Request/CreateReaderRequest.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.String,System.String,System.String,System.DateOnly)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.v1.Books.Response.BookDetailsResponse" filename="PracticalWork.Library.Contracts/v1/Books/Response/BookDetailsResponse.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.String,PracticalWork.Library.Contracts.v1.Enums.BookCategory,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.String,System.Int32,System.String,PracticalWork.Library.Contracts.v1.Enums.BookStatus,System.Boolean)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="28" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.v1.Books.Response.BookResponse" filename="PracticalWork.Library.Contracts/v1/Books/Response/BookResponse.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.String,PracticalWork.Library.Contracts.v1.Enums.BookCategory,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.String,System.Int32,PracticalWork.Library.Contracts.v1.Enums.BookStatus,System.Boolean)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="24" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.v1.Books.Response.BookWithIssuanceRecordsResponse" filename="PracticalWork.Library.Contracts/v1/Books/Response/BookWithIssuanceRecordsResponse.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.String,PracticalWork.Library.Contracts.v1.Enums.BookCategory,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.String,System.Int32,PracticalWork.Library.Contracts.v1.Enums.BookStatus,System.Boolean,System.Collections.Generic.IReadOnlyList`1&lt;PracticalWork.Library.Contracts.v1.Books.Response.IssuanceRecord&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="26" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.v1.Books.Request.CreateBookRequest" filename="PracticalWork.Library.Contracts/v1/Books/Request/CreateBookRequest.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.String,PracticalWork.Library.Contracts.v1.Enums.BookCategory,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.String,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.v1.Books.Request.UpdateBookRequest" filename="PracticalWork.Library.Contracts/v1/Books/Request/UpdateBookRequest.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.String,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.String,System.Int32)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.v1.Abstracts.PaginationRequest" filename="PracticalWork.Library.Contracts/v1/Abstracts/PaginationRequest.cs" line-rate="1" branch-rate="0.5" complexity="6">
+          <methods>
+            <method name="get_PageNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="set_PageNumber" signature="(System.Int32)" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="20" hits="6" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="3" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="21" hits="6" branch="False" />
+                <line number="22" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_PageSize" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="30" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="set_PageSize" signature="(System.Int32)" line-rate="1" branch-rate="0.5" complexity="2">
+              <lines>
+                <line number="31" hits="6" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="3" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="6" branch="False" />
+                <line number="33" hits="6" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="19" hits="5" branch="False" />
+            <line number="20" hits="6" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="3" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="21" hits="6" branch="False" />
+            <line number="22" hits="6" branch="False" />
+            <line number="30" hits="5" branch="False" />
+            <line number="31" hits="6" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="3" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="32" hits="6" branch="False" />
+            <line number="33" hits="6" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Models.ReportModels.ActivityLog" filename="PracticalWork.Library.Contracts/Models/ReportModels/ActivityLog.cs" line-rate="1" branch-rate="1" complexity="13">
+          <methods>
+            <method name="SerializeEvent" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="DeserializeEvent" signature="(System.String,System.String)" line-rate="1" branch-rate="1" complexity="12">
+              <lines>
+                <line number="23" hits="7" branch="False" />
+                <line number="24" hits="7" branch="True" condition-coverage="100% (12/12)">
+                  <conditions>
+                    <condition number="16" type="jump" coverage="100%" />
+                    <condition number="29" type="jump" coverage="100%" />
+                    <condition number="42" type="jump" coverage="100%" />
+                    <condition number="55" type="jump" coverage="100%" />
+                    <condition number="68" type="jump" coverage="100%" />
+                    <condition number="81" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="25" hits="7" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
+                <line number="32" hits="1" branch="False" />
+                <line number="33" hits="7" branch="False" />
+                <line number="34" hits="6" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="1" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
+            <line number="23" hits="7" branch="False" />
+            <line number="24" hits="7" branch="True" condition-coverage="100% (12/12)">
+              <conditions>
+                <condition number="16" type="jump" coverage="100%" />
+                <condition number="29" type="jump" coverage="100%" />
+                <condition number="42" type="jump" coverage="100%" />
+                <condition number="55" type="jump" coverage="100%" />
+                <condition number="68" type="jump" coverage="100%" />
+                <condition number="81" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="25" hits="7" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
+            <line number="32" hits="1" branch="False" />
+            <line number="33" hits="7" branch="False" />
+            <line number="34" hits="6" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Models.ReportModels.Report" filename="PracticalWork.Library.Contracts/Models/ReportModels/Report.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MarkAsGenerated" signature="(System.String,System.TimeProvider)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Helpers.CacheKeyHasher" filename="PracticalWork.Library.Contracts/Helpers/CacheKeyHasher.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="GenerateCacheKey" signature="(System.String,System.Int32,System.Object)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="3" branch="False" />
+                <line number="14" hits="3" branch="False" />
+                <line number="15" hits="3" branch="False" />
+                <line number="16" hits="3" branch="False" />
+                <line number="17" hits="3" branch="False" />
+                <line number="19" hits="3" branch="False" />
+                <line number="20" hits="3" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="3" branch="False" />
+            <line number="14" hits="3" branch="False" />
+            <line number="15" hits="3" branch="False" />
+            <line number="16" hits="3" branch="False" />
+            <line number="17" hits="3" branch="False" />
+            <line number="19" hits="3" branch="False" />
+            <line number="20" hits="3" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Helpers.CacheManager/&lt;CheckCacheAsync&gt;d__2`2" filename="PracticalWork.Library.Contracts/Helpers/CacheManager.cs" line-rate="0.8887999999999999" branch-rate="0.6666" complexity="6">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0.8887999999999999" branch-rate="0.6666" complexity="6">
+              <lines>
+                <line number="40" hits="2" branch="False" />
+                <line number="41" hits="2" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="37" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="42" hits="0" branch="False" />
+                <line number="43" hits="0" branch="False" />
+                <line number="46" hits="2" branch="False" />
+                <line number="47" hits="2" branch="False" />
+                <line number="48" hits="2" branch="False" />
+                <line number="49" hits="2" branch="False" />
+                <line number="50" hits="2" branch="False" />
+                <line number="51" hits="2" branch="False" />
+                <line number="52" hits="2" branch="False" />
+                <line number="53" hits="2" branch="False" />
+                <line number="55" hits="2" branch="False" />
+                <line number="56" hits="2" branch="True" condition-coverage="75% (3/4)">
+                  <conditions>
+                    <condition number="371" type="jump" coverage="50%" />
+                    <condition number="394" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="57" hits="1" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="40" hits="2" branch="False" />
+            <line number="41" hits="2" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="37" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="42" hits="0" branch="False" />
+            <line number="43" hits="0" branch="False" />
+            <line number="46" hits="2" branch="False" />
+            <line number="47" hits="2" branch="False" />
+            <line number="48" hits="2" branch="False" />
+            <line number="49" hits="2" branch="False" />
+            <line number="50" hits="2" branch="False" />
+            <line number="51" hits="2" branch="False" />
+            <line number="52" hits="2" branch="False" />
+            <line number="53" hits="2" branch="False" />
+            <line number="55" hits="2" branch="False" />
+            <line number="56" hits="2" branch="True" condition-coverage="75% (3/4)">
+              <conditions>
+                <condition number="371" type="jump" coverage="50%" />
+                <condition number="394" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="57" hits="1" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Helpers.CacheManager/&lt;InvalidateBookCacheAsync&gt;d__0" filename="PracticalWork.Library.Contracts/Helpers/CacheManager.cs" line-rate="0" branch-rate="0" complexity="18">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="18">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="50" type="jump" coverage="0%" />
+                    <condition number="62" type="jump" coverage="0%" />
+                    <condition number="78" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="11" hits="0" branch="False" />
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="15" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="219" type="jump" coverage="0%" />
+                    <condition number="231" type="jump" coverage="0%" />
+                    <condition number="249" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+                <line number="20" hits="0" branch="True" condition-coverage="0% (0/6)">
+                  <conditions>
+                    <condition number="393" type="jump" coverage="0%" />
+                    <condition number="405" type="jump" coverage="0%" />
+                    <condition number="423" type="jump" coverage="0%" />
+                  </conditions>
+                </line>
+                <line number="21" hits="0" branch="False" />
+                <line number="22" hits="0" branch="False" />
+                <line number="23" hits="0" branch="False" />
+                <line number="24" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="50" type="jump" coverage="0%" />
+                <condition number="62" type="jump" coverage="0%" />
+                <condition number="78" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="15" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="219" type="jump" coverage="0%" />
+                <condition number="231" type="jump" coverage="0%" />
+                <condition number="249" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+            <line number="20" hits="0" branch="True" condition-coverage="0% (0/6)">
+              <conditions>
+                <condition number="393" type="jump" coverage="0%" />
+                <condition number="405" type="jump" coverage="0%" />
+                <condition number="423" type="jump" coverage="0%" />
+              </conditions>
+            </line>
+            <line number="21" hits="0" branch="False" />
+            <line number="22" hits="0" branch="False" />
+            <line number="23" hits="0" branch="False" />
+            <line number="24" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Helpers.CacheManager/&lt;InvalidateReportsCacheAsync&gt;d__1" filename="PracticalWork.Library.Contracts/Helpers/CacheManager.cs" line-rate="1" branch-rate="0.6666" complexity="6">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.6666" complexity="6">
+              <lines>
+                <line number="27" hits="4" branch="False" />
+                <line number="28" hits="4" branch="True" condition-coverage="66.66% (4/6)">
+                  <conditions>
+                    <condition number="22" type="jump" coverage="50%" />
+                    <condition number="34" type="jump" coverage="50%" />
+                    <condition number="50" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="29" hits="4" branch="False" />
+                <line number="30" hits="4" branch="False" />
+                <line number="31" hits="4" branch="False" />
+                <line number="32" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="27" hits="4" branch="False" />
+            <line number="28" hits="4" branch="True" condition-coverage="66.66% (4/6)">
+              <conditions>
+                <condition number="22" type="jump" coverage="50%" />
+                <condition number="34" type="jump" coverage="50%" />
+                <condition number="50" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="29" hits="4" branch="False" />
+            <line number="30" hits="4" branch="False" />
+            <line number="31" hits="4" branch="False" />
+            <line number="32" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Helpers.CacheManager/&lt;WriteToCacheAsync&gt;d__3`2" filename="PracticalWork.Library.Contracts/Helpers/CacheManager.cs" line-rate="0.8665999999999999" branch-rate="0.5" complexity="4">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="0.8665999999999999" branch-rate="0.5" complexity="4">
+              <lines>
+                <line number="71" hits="1" branch="False" />
+                <line number="72" hits="1" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="33" type="jump" coverage="50%" />
+                    <condition number="49" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="73" hits="0" branch="False" />
+                <line number="74" hits="0" branch="False" />
+                <line number="77" hits="1" branch="False" />
+                <line number="78" hits="1" branch="False" />
+                <line number="79" hits="1" branch="False" />
+                <line number="80" hits="1" branch="False" />
+                <line number="81" hits="1" branch="False" />
+                <line number="82" hits="1" branch="False" />
+                <line number="83" hits="1" branch="False" />
+                <line number="84" hits="1" branch="False" />
+                <line number="86" hits="1" branch="False" />
+                <line number="87" hits="1" branch="False" />
+                <line number="88" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="71" hits="1" branch="False" />
+            <line number="72" hits="1" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="33" type="jump" coverage="50%" />
+                <condition number="49" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="73" hits="0" branch="False" />
+            <line number="74" hits="0" branch="False" />
+            <line number="77" hits="1" branch="False" />
+            <line number="78" hits="1" branch="False" />
+            <line number="79" hits="1" branch="False" />
+            <line number="80" hits="1" branch="False" />
+            <line number="81" hits="1" branch="False" />
+            <line number="82" hits="1" branch="False" />
+            <line number="83" hits="1" branch="False" />
+            <line number="84" hits="1" branch="False" />
+            <line number="86" hits="1" branch="False" />
+            <line number="87" hits="1" branch="False" />
+            <line number="88" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Exceptions.AppException" filename="PracticalWork.Library.Contracts/Exceptions/AppException.cs" line-rate="0" branch-rate="1" complexity="3">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.Exception)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Exceptions.EntityNotFoundException`1" filename="PracticalWork.Library.Contracts/Exceptions/EntityNotFoundException.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Exceptions.NotFoundException" filename="PracticalWork.Library.Contracts/Exceptions/NotFoundException.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+                <line number="13" hits="0" branch="False" />
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="0" branch="False" />
+            <line number="14" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.BaseEvent" filename="PracticalWork.Library.Contracts/Events/BaseEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.String,System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="19" branch="False" />
+                <line number="14" hits="19" branch="False" />
+                <line number="15" hits="19" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="19" branch="False" />
+            <line number="14" hits="19" branch="False" />
+            <line number="15" hits="19" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.BaseLibraryEvent" filename="PracticalWork.Library.Contracts/Events/BaseLibraryEvent.cs" line-rate="0.25" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="17" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+                <line number="10" hits="0" branch="False" />
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="17" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.BookArchivedEvent" filename="PracticalWork.Library.Contracts/Events/BookArchivedEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.String,System.String,System.DateTime)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.BookBorrowedEvent" filename="PracticalWork.Library.Contracts/Events/BookBorrowedEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.Guid,System.String,System.String,System.DateOnly,System.DateOnly)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.BookCreatedEvent" filename="PracticalWork.Library.Contracts/Events/BookCreatedEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.String,System.String,System.String[],System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="7" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.BookReturnedEvent" filename="PracticalWork.Library.Contracts/Events/BookReturnedEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.Guid,System.String,System.String,System.DateOnly)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.ReaderClosedEvent" filename="PracticalWork.Library.Contracts/Events/ReaderClosedEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.String,System.DateTime,System.String)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.ReaderCreatedEvent" filename="PracticalWork.Library.Contracts/Events/ReaderCreatedEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.String,System.String,System.DateOnly,System.DateTime)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Events.ReportCreateEvent" filename="PracticalWork.Library.Contracts/Events/ReportCreateEvent.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(System.Guid,System.Nullable`1&lt;System.DateOnly&gt;,System.Nullable`1&lt;System.DateOnly&gt;,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,PracticalWork.Library.Contracts.v1.Enums.ReportStatus)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="PracticalWork.Library.Contracts.Abstractions.Storage.EntityBase" filename="PracticalWork.Library.Contracts/Abstractions/Storage/EntityBase.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="False" />
+                <line number="16" hits="0" branch="False" />
+                <line number="17" hits="0" branch="False" />
+                <line number="18" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="0" branch="False" />
+            <line number="16" hits="0" branch="False" />
+            <line number="17" hits="0" branch="False" />
+            <line number="18" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

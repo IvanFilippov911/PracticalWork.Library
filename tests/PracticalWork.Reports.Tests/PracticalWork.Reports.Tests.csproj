@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="Moq" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PracticalWork.Library.Contracts\PracticalWork.Library.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\PracticalWork.Reports.Web\PracticalWork.Reports.Web.csproj" />
+    <ProjectReference Include="..\..\src\PracticalWork.Reports.Worker\PracticalWork.Reports.Worker.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\TestCommon\StaticOptionsMonitor.cs" Link="TestCommon\StaticOptionsMonitor.cs" />
+    <Compile Include="..\TestCommon\TestTimeProvider.cs" Link="TestCommon\TestTimeProvider.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+</Project>

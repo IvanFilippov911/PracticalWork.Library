@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <Format>cobertura</Format>
+          <Include>[PracticalWork.Library.Cache.Redis]*,[PracticalWork.Library.Data.Minio]*,[PracticalWork.Library.Data.PostgreSql]*,[PracticalWork.Library.Data.Reports.PostgreSql]*,[PracticalWork.Library.MessageBroker]*</Include>
+          <Exclude>[*.Tests]*,[xunit*]*,[Moq*]*,[coverlet.*]*</Exclude>
+          <ExcludeByFile>**/Migrations/*.cs,**/obj/**,**/bin/**</ExcludeByFile>
+          <IncludeTestAssembly>false</IncludeTestAssembly>
+          <SingleHit>false</SingleHit>
+          <UseSourceLink>false</UseSourceLink>
+          <SkipAutoProps>true</SkipAutoProps>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-PracticalWork.Reports.Worker-3a9aab1a-7c18-4f8d-8a6b-748c4a2f8765</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PracticalWork.Library.Contracts\PracticalWork.Library.Contracts.csproj" />
+    <ProjectReference Include="..\PracticalWork.Library.Cache.Redis\PracticalWork.Library.Cache.Redis.csproj" />
+    <ProjectReference Include="..\PracticalWork.Library.Data.Minio\PracticalWork.Library.Data.Minio.csproj" />
+    <ProjectReference Include="..\PracticalWork.Library.Data.Reports.PostgreSql\PracticalWork.Library.Data.Reports.PostgreSql.csproj" />
+    <ProjectReference Include="..\PracticalWork.Library.MessageBroker\PracticalWork.Library.MessageBroker.csproj" />
+  </ItemGroup>
+
+</Project>
